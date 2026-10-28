@@ -14,7 +14,7 @@
 ---
 
 ## F0 · api-scaffold — Generar el proyecto (lo hace el agente)
-**Estado:** PENDIENTE
+**Estado:** HECHA (2026-10-28, commit d11383e)
 **Objetivo:** dejar el proyecto ya generado listo como repositorio git. **El proyecto YA EXISTE** (`pom.xml` presente): NO lo regeneres ni lo descargues.
 **Tareas:**
 - `pom.xml` ya existe → saltar directo a "git". (Solo si NO existiera: descargar desde start.spring.io como sigue.)
@@ -26,7 +26,7 @@
 - git: si no hay `.git` → `git init -b main`; asegurar `.gitignore`; `git add -A`; commit `chore: proyecto inicial generado con Spring Initializr`.
 **Criterios de aceptación:** existe `pom.xml` con `<java.version>17</java.version>` (se conserva la versión de Boot que trae); `.\mvnw.cmd -q -DskipTests package` compila; hay un commit en `main`.
 **Comandos de verificación:** `.\mvnw.cmd -q -DskipTests package`; `git log --oneline -1`
-**Evidencia:** —
+**Evidencia:** `.\mvnw.cmd -q -DskipTests package` exit code 0; `git log --oneline -1` -> `d11383e chore: proyecto inicial generado con Spring Initializr`.
 
 ## F1 · api-base — Base del proyecto y configuración
 **Estado:** PENDIENTE
