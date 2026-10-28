@@ -1,4 +1,4 @@
-# PLAN — denunciaservice
+﻿# PLAN — denunciaservice
 
 > Cola de trabajo del loop ODD. El agente actualiza **Estado**, **Evidencia** y **Decisiones**.
 > Estados: `PENDIENTE` · `EN_CURSO` · `HECHA` · `BLOQUEADA` (solo por `[MANUAL]`).
@@ -29,7 +29,7 @@
 **Evidencia:** `.\mvnw.cmd -q -DskipTests package` exit code 0; `git log --oneline -1` -> `d11383e chore: proyecto inicial generado con Spring Initializr`.
 
 ## F1 · api-base — Base del proyecto y configuración
-**Estado:** PENDIENTE
+**Estado:** HECHA (2026-10-28, commit d4eed8f)
 **Objetivo:** proyecto compila y testea con configuración por variables de entorno.
 **Tareas sugeridas:**
 - Verificar `pom.xml` (Java 17; conservar la versión de Spring Boot que trae) y agregar `com.h2database:h2` scope `test` (la versión la gestiona Boot). `validation` ya está.
@@ -39,7 +39,7 @@
 - Crear subpaquetes vacíos con `package-info.java` no es necesario; se crean con la F2.
 **Criterios de aceptación:** `./mvnw -q test` verde (el test `contextLoads` arranca con H2, sin PostgreSQL).
 **Comandos de verificación:** `./mvnw -q test`
-**Evidencia:** —
+**Evidencia:** .\mvnw.cmd -B -ntp test verde en 5.48s (Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, BUILD SUCCESS). Commit: d4eed8f.
 
 ## F2 · api-denuncias — Las 4 capas y los 5 endpoints
 **Estado:** PENDIENTE
