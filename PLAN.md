@@ -64,7 +64,7 @@
 **Evidencia:** —
 
 ## F4 · api-tooling — Postman, smoke test y documentación
-**Estado:** PENDIENTE
+**Estado:** HECHA (2026-10-28, commit 6049688)
 **Objetivo:** probar la API local o remota con un comando y preparar la exposición.
 **Tareas sugeridas:**
 - `postman/denunciaservice.postman_collection.json` (variable `baseUrl`, 5 requests con ejemplos).
