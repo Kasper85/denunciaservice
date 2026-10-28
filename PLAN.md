@@ -42,7 +42,7 @@
 **Evidencia:** .\mvnw.cmd -B -ntp test verde en 5.48s (Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, BUILD SUCCESS). Commit: d4eed8f.
 
 ## F2 · api-denuncias — Las 4 capas y los 5 endpoints
-**Estado:** PENDIENTE
+**Estado:** HECHA (2026-10-28, commit 7e235c4)
 **Objetivo:** contrato completo de ALCANCE §4 funcionando y probado.
 **Tareas sugeridas (TDD, una por commit):**
 - T1 `entity/Denuncia` (tabla `denuncias`, columnas y longitudes de §4.1, `@PrePersist` para `fecha` y `estado=1`).
@@ -53,7 +53,7 @@
 - T6 `DenunciaControllerIT` (MockMvc) cubriendo: 201 creación; 400 dni inválido; 400 tipo inválido; lista paginada 0/5 y 5/5 con 7 registros (5 y 2 elementos, orden desc); 400 limit=0 y limit=51; 200/404 por id; DNI con resultados y vacío; 400 DNI de 7 dígitos; PUT 200 estado=0, idempotente, 404; `/denuncias` y `/denuncias/` ambos responden.
 **Criterios de aceptación:** todos los casos de T6 verdes.
 **Comandos de verificación:** `./mvnw -q test`
-**Evidencia:** —
+**Evidencia:** `.\mvnw.cmd -B -ntp test` verde (28 tests pasando, BUILD SUCCESS en 7.87s). Commit: 7e235c4.
 
 ## F3 · api-docker — Contenedor listo para Render
 **Estado:** PENDIENTE
