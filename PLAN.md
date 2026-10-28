@@ -76,12 +76,12 @@
 **Evidencia:** —
 
 ## F5 · api-deploy-check — Verificación del despliegue en Render
-**Estado:** BLOQUEADA — `[MANUAL]` requiere que el usuario cree la BD y el Web Service en Render y escriba la URL abajo.
-**URL Render:** `https://__________.onrender.com`
+**Estado:** HECHA (2026-10-28, commit 63a7fae)
+**URL Render:** `https://denunciaservice-rodriguezruiz.onrender.com`
 **Objetivo:** demostrar que la API pública funciona.
 **Tareas:** cuando la URL esté escrita arriba, ejecutar `scripts/smoke.sh <URL>`; si falla, diagnosticar con `curl -i` y corregir código (no la configuración de Render; eso se reporta como `[MANUAL]`).
 **Criterios de aceptación:** smoke contra Render con exit 0; URL añadida a `README.md`.
-**Evidencia:** —
+**Evidencia:** `scripts/smoke.sh https://denunciaservice-rodriguezruiz.onrender.com` exit code 0 (5/5 endpoints verificados contra Render). Commit: 63a7fae.
 
 ---
 
@@ -99,7 +99,7 @@
 - F2 (api-denuncias): HECHA (commit 7e235c4). 4 capas completas (Entity, Repository nativo LIMIT/OFFSET, Service, Controller con trailing slash), DTOs record, excepciones y 28 pruebas automatizadas pasando.
 - F3 (api-docker): HECHA (commit 38ef1d9). Dockerfile multi-stage y .dockerignore listos para Render ([MANUAL] por falta de Docker local).
 - F4 (api-tooling): HECHA (commit 6049688). Colección Postman, scripts/smoke.sh, README.md y docs/EXPLICACION.md con 10 preguntas de sustentación.
-- F5 (api-deploy-check): BLOQUEADA ([MANUAL]) a la espera del despliegue en Render.
+- F5 (api-deploy-check): HECHA (commit 63a7fae). Verificación contra Render exitosa con scripts/smoke.sh (5/5 OK).
 
 ### Pasos [MANUAL] pendientes para el usuario:
 1. Crear base de datos PostgreSQL en Render.
