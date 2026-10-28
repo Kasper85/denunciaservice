@@ -56,7 +56,7 @@
 **Evidencia:** `.\mvnw.cmd -B -ntp test` verde (28 tests pasando, BUILD SUCCESS en 7.87s). Commit: 7e235c4.
 
 ## F3 · api-docker — Contenedor listo para Render
-**Estado:** PENDIENTE
+**Estado:** HECHA (2026-10-28, commit 38ef1d9) — [MANUAL] Docker no disponible localmente
 **Objetivo:** imagen Docker que arranca con `PORT`, `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`.
 **Tareas sugeridas:** `Dockerfile` multi-stage (ALCANCE §5), `.dockerignore`, sección "Despliegue en Render" en `README.md` con las 4 variables de entorno y el formato `jdbc:postgresql://<host>:5432/<db>`.
 **Criterios de aceptación:** `docker build` exitoso; si hay Docker y PostgreSQL local, `docker run -e ...` responde `GET /denuncias/` con 200.
