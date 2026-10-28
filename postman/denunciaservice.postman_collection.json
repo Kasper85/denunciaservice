@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "c1f7a467-3e11-477d-bb62-a5ecf86a9f45",
+    "name": "denunciaservice",
+    "description": "Colección de endpoints para el Sistema de Denuncias de Inseguridad Ciudadana (Serenazgo)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "denunciaId",
+      "value": "1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "E1 - Registrar denuncia",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"dni\": \"45678912\",\n  \"tipo\": \"ROBO\",\n  \"direccion\": \"Av. Balta 123, Chiclayo\",\n  \"descripcion\": \"Me arrebataron el celular cerca del mercado\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/denuncias/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "denuncias",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E2 - Obtener denuncias paginadas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/denuncias/?offset=0&limit=5",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "denuncias",
+            ""
+          ],
+          "query": [
+            {
+              "key": "offset",
+              "value": "0"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E3 - Obtener denuncia por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/denuncias/{{denunciaId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "denuncias",
+            "{{denunciaId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E4 - Denuncias de un ciudadano",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/denuncias/ciudadano/45678912",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "denuncias",
+            "ciudadano",
+            "45678912"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E5 - Atender denuncia",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/denuncias/{{denunciaId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "denuncias",
+            "{{denunciaId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
