@@ -1,4 +1,4 @@
-# denunciaservice — API REST de Serenazgo
+﻿# denunciaservice — API REST de Serenazgo
 
 API REST desarrollada con Spring Boot 4 y Java 17 para el registro y gestión de denuncias ciudadanas de serenazgo.
 
@@ -36,6 +36,8 @@ Para ejecutar las pruebas:
 ```
 
 ## Despliegue en Render
+
+- **URL pública de la API en Render:** `https://denunciaservice-rodriguezruiz.onrender.com/`
 
 El servicio se despliega como un **Web Service (Docker)** en Render conectado a una base de datos PostgreSQL:
 
