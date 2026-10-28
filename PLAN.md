@@ -87,6 +87,23 @@
 
 ## Decisiones
 <!-- El agente agrega aquí: fecha · feature · decisión · porqué (una línea) -->
+- 2026-10-28 · F1 · Configuración de H2 con MODE=PostgreSQL en test · Permite pruebas automatizadas rápidas sin requerir PostgreSQL local instalado.
+- 2026-10-28 · F2 · Inclusión de **/*IT.java en configuración de maven-surefire-plugin · Permite ejecutar pruebas de integración MockMvc directamente con .\mvnw.cmd test.
+- 2026-10-28 · F3 · Registro de verificación Docker como [MANUAL] · Docker no está instalado en la máquina local de desarrollo (conforme a AGENTS.md §7 y PLAN.md).
+- 2026-10-28 · F4 · Ejecución de scripts shell mediante Git Bash (C:\Program Files\Git\bin\bash.exe) · Evita el conflicto con el shim de WSL en Windows cuando no hay distro instalada.
 
 ## Estado final
-<!-- El agente escribe aquí el resumen al terminar el loop y los [MANUAL] pendientes -->
+### Resumen de ejecución
+- F0 (api-scaffold): HECHA (commit d11383e). Repositorio Git inicializado en rama main con commit inicial.
+- F1 (api-base): HECHA (commit d4eed8f). Configuración de application.properties por variables de entorno y soporte H2.
+- F2 (api-denuncias): HECHA (commit 7e235c4). 4 capas completas (Entity, Repository nativo LIMIT/OFFSET, Service, Controller con trailing slash), DTOs record, excepciones y 28 pruebas automatizadas pasando.
+- F3 (api-docker): HECHA (commit 38ef1d9). Dockerfile multi-stage y .dockerignore listos para Render ([MANUAL] por falta de Docker local).
+- F4 (api-tooling): HECHA (commit 6049688). Colección Postman, scripts/smoke.sh, README.md y docs/EXPLICACION.md con 10 preguntas de sustentación.
+- F5 (api-deploy-check): BLOQUEADA ([MANUAL]) a la espera del despliegue en Render.
+
+### Pasos [MANUAL] pendientes para el usuario:
+1. Crear base de datos PostgreSQL en Render.
+2. Crear Web Service en Render conectado a https://github.com/Kasper85/denunciaservice con entorno Docker.
+3. Configurar en Render las 4 variables de entorno: PORT=8080, DB_URL=jdbc:postgresql://<host>:5432/<db>, DB_USERNAME=<user>, DB_PASSWORD=<pass>.
+4. Configurar la URL generada en PLAN.md (ej. https://denunciaservice-rodriguezruiz.onrender.com) y en gradle.properties de la app Android.
+5. Ejecutar smoke test contra Render: & 'C:\Program Files\Git\bin\bash.exe' scripts/smoke.sh <URL_RENDER> para cerrar F5.
