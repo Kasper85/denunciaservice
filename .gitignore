@@ -7,6 +7,14 @@ application-local.properties
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Documentos y carpetas de trabajo del agente
+*.md
+!README.md
+odd/
+docs/
+openspec/
+.atl/
+
 ### STS ###
 .apt_generated
 .classpath
